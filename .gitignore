@@ -1,2 +1,7 @@
 bin/
 obj/
+
+React/Learn/MoneyManagementSystem/UI/moneymanagementsystem/node_modules/*
+React/Learn/demo/node_modules/*
+React/Learn/MoneyManagementSystem/API/flaskenv/*
+React/Learn/MoneyManagementSystem/API/__pycache__/*

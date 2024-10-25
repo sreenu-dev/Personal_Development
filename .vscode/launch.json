@@ -1,0 +1,24 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Flask (flaskenv)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "E:\\Personal_Development\\Personal_Development\\React\\Learn\\MoneyManagementSystem\\API\\app.py",
+            "args": [
+                "run",
+                "--no-debugger",  
+                "--no-reload"      
+            ],
+            "jinja": true,         
+            "env": {
+                "FLASK_APP": "app.py",
+                "FLASK_ENV": "development"  
+            },
+            "justMyCode": true,
+            "python": "E:\\Personal_Development\\Personal_Development\\React\\Learn\\MoneyManagementSystem\\API\\flaskenv\\Scripts\\python",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

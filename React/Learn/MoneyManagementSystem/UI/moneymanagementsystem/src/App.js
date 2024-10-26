@@ -9,7 +9,7 @@ function App() {
     <div className="">
       <div className=''>
         <div className='mms_title'>Money Management System</div>
-        <AddUser></AddUser>
+        {/* <AddUser></AddUser>wx758wc cm   */}
         <Routes>
           <Route path='/useradmin' element={<UserManagement></UserManagement>} ></Route>
         </Routes>

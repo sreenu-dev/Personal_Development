@@ -1,5 +1,11 @@
-function buttonForFirstApp(prop){
-    return <button className="btn btn-primary">{prop.buttonText}</button>
-}
+export default function CustomButton({onClick,btnClick,customClick}) {
 
-export default buttonForFirstApp;
+    const clickhandle=()=>{
+        onClick();
+        customClick();
+    }
+    
+    return (
+        <button onClick={clickhandle} className="btn btn-primary">{btnClick}</button>
+    )
+}

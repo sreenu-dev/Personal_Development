@@ -10,15 +10,15 @@ driver=webdriver.Edge(service=service)
 
 print(driver.title)
 
-driver.get("https://accenture.percipio.com/courses/6137f6b1-3aed-470f-af1c-69996ad63860/videos/73f6c40a-3212-4fbe-a3be-c121076bf456")
+driver.get("https://accenture.percipio.com/courses/193bdd21-b805-40ec-99a3-6b814b8dbfca/videos/da1f9184-f706-432a-9876-9fada5c9c35c")
 
-WebDriverWait(driver, 60).until(
-    EC.presence_of_element_located((By.ID, "AccentureExchange"))
-)
+# WebDriverWait(driver, 60).until(
+#     EC.presence_of_element_located((By.ID, "AccentureExchange"))
+# )
 
-
-accenture_Employee=driver.find_element(By.ID, "AccentureExchange")
-accenture_Employee.click()
+# input("press to start")
+# accenture_Employee=driver.find_element(By.ID, "AccentureExchange")
+# accenture_Employee.click()
 boti=[]
 
 print(driver.title)

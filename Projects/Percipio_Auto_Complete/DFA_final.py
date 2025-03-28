@@ -12,7 +12,7 @@ driver=webdriver.Edge(service=service)
 
 print(driver.title)
 
-driver.get("https://wd103.myworkday.com/accenture/learning/course/2175e270c88e10016ccfc516d0800001/lesson/3d79bfadf8451002e1056f1f6b9a0000?record=7707caa956141001b0e68e1177320000&type=9882927d138b100019b928e75843018d")
+driver.get("https://wd103.myworkday.com/accenture/learning/course/c2b4d4851b3610016ca0d40d91ae0000/lesson/bd05a1f5c5d01001fb5282ade33e0002?record=6d0e5a94ad241001774359d2d1280000&type=9882927d138b100019b928e75843018d")
 
 Questions_data=[]
 
@@ -104,7 +104,9 @@ def checkAnsAndDoQuestions():
 
     print("Working")
 
+    print("Questions Data")
     print(Questions_data)
+    input("Question Data Completed")
 
     WebDriverWait(driver,40).until(
         EC.presence_of_element_located((By.XPATH,"//div[contains(@class,'slide-object slide-object-vectorshape shown cursor-hover')]"))
@@ -151,7 +153,7 @@ def checkAnsAndDoQuestions():
         print("Error",e)
     print("Correct Ans Count",correctAnsCount)
     decision_input=input("Would you like to do one more iteration? (Y/N)")
-    if(decision_input=="Y"):
+    if(decision_input=="Y" or decision_input=="y"):
         checkAnsAndDoQuestions()
 
 

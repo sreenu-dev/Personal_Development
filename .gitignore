@@ -7803,3 +7803,5 @@ React/Learn/node_modules/which-typed-array/README.md
 React/Learn/node_modules/which-typed-array/tsconfig.json
 React/Learn/node_modules/which-typed-array/.github/FUNDING.yml
 React/Learn/node_modules/which-typed-array/test/index.js
+
+**/node_modules/*

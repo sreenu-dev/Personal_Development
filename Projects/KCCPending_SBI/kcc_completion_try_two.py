@@ -93,16 +93,16 @@ try:
         WebDriverWait(currentTab,10).until(EC.presence_of_element_located((By.XPATH,"//button[text()='UPDATE & CONTINUE']")))
         driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
-        stateDetaisl=Select(driver.find_element(By.NAME,"resStateId"))
-        if(stateDetaisl.first_selected_option.text=="Select"):
-            stateDetaisl.select_by_visible_text("ANDHRA PRADESH")
-            time.sleep(1)
-            districtDetails=Select(driver.find_element(By.NAME,"resDistrictId"))
-            districtDetails.select_by_visible_text("Nandyal")
-            time.sleep(1)
-            Select(driver.find_element(By.NAME,"resSubDistrictId")).select_by_visible_text("Dhone")
-            time.sleep(1)
-            Select(driver.find_element(By.NAME,"resVillageId")).select_by_visible_text("Dhone")
+        # stateDetaisl=Select(driver.find_element(By.NAME,"resStateId"))
+        # if(stateDetaisl.first_selected_option.text=="Select"):
+        #     stateDetaisl.select_by_visible_text("ANDHRA PRADESH")
+        #     time.sleep(1)
+        #     districtDetails=Select(driver.find_element(By.NAME,"resDistrictId"))
+        #     districtDetails.select_by_visible_text("Nandyal")
+        #     time.sleep(1)
+        #     Select(driver.find_element(By.NAME,"resSubDistrictId")).select_by_visible_text("Dhone")
+        #     time.sleep(1)
+        #     Select(driver.find_element(By.NAME,"resVillageId")).select_by_visible_text("Dhone")
 
 
         streetAddress=driver.find_element(By.NAME,"resAddress")
@@ -183,7 +183,7 @@ try:
         driver.get('https://fasalrin.gov.in/dashboard')
         print("Completed:",i)
         print("....................----------------------------------....................")
-        # data.at[i,'DataAdded']='yes'
+        data.at[i,'DataAdded']='yes'
         # except Exception as e:
         #     print(e)
         #     isSuccess=True

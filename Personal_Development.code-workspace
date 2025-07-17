@@ -2,7 +2,14 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"path": "Projects/TaskManagementAPI"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"omnisharp.useModernNet": true,
+		"omnisharp.projectLoadTimeout": 60,
+		"dotnet.server.useOmnisharp": true
+	}
 }

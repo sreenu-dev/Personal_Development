@@ -62,45 +62,99 @@ export default function OperatorSelection() {
     let [getRandomAttacker, setRandomAttacker] = useState(randomAttacker);
     let [getRandomDefender, setRandomDefender] = useState(randomDefender);
 
+    let [attackerBanList, setAttackerBanList] = useState([]);
+    let [defenderBanList, setDefenderBanList] = useState([]);
 
-    function getRandomAttackerFun() {
+
+    function getRandomAttackerFun(callCount = 0) {
         randomAttacker = attackers[Math.floor(Math.random() * attackers.length)];
+        if (attackerBanList.includes(randomAttacker.name) && callCount < attackers.length + 1) {
+            getRandomAttackerFun(callCount+1); // Recursively call until a non-banned attacker is found
+            return;
+        }
         setRandomAttacker(randomAttacker);
         console.log(randomAttacker);
     }
 
-    function getRandomDefenderFun() {
+    function getRandomDefenderFun(callCount= 0) {
         randomDefender = defenders[Math.floor(Math.random() * defenders.length)];
+        if (defenderBanList.includes(randomDefender.name) && callCount<defenders.length+1) {
+            getRandomDefenderFun(callCount+1); // Recursively call until a non-banned defender is found
+            return;
+        }
         setRandomDefender(randomDefender);
         console.log(randomDefender);
+    }
+
+    function setIsBannedAttackerFun(selectedAttacker) {
+        // for(let i=0;i<attackers.length;i++){
+        //     if(attackers[i].name === selectedAttacker.name){
+        //         attackers[i].isBanned = true;
+        //         getRandomAttackerFun();
+        //     }
+        // }
+        let attackerBanListCopy = [...attackerBanList];
+        if (!attackerBanListCopy.includes(selectedAttacker.name)) {
+            setAttackerBanList([...attackerBanListCopy, selectedAttacker.name]);
+        }
+        // attackerBanList.push(selectedAttacker.name);
+        getRandomAttackerFun();
+    }
+
+    function setIsBannedDefenderFun(selectedDefender) {
+        let defenderBanListCopy = [...defenderBanList];
+        if (!defenderBanListCopy.includes(selectedDefender.name)) {
+            setDefenderBanList([...defenderBanListCopy, selectedDefender.name]);
+        }
+        getRandomDefenderFun();
     }
 
     return (
         <div>
             Hai Operator Selection Page comes here
             <div className="d-flex">
-                <div className="d-flex">
-                    <div class="h2">Attackers</div>
-                    <div className="ps-3">
-                        <button className="btn btn-primary" onClick={getRandomAttackerFun}>Get Random Attacker</button>
+                <div>
+                    <div className="d-flex">
+                        <div class="h2">Attackers</div>
+                        <div className="ps-3">
+                            <button className="btn btn-primary" onClick={getRandomAttackerFun}>Get Random Attacker</button>
+                        </div>
+                    </div>
+                    <div>
+                        <div className="d-flex flex-column align-items-center border border-black m-2 p-2">
+                            <span>{getRandomAttacker.name}</span>
+                            <img src={getRandomAttacker.image} />
+                        </div>
+                    </div>
+                    <div>
+                        <button className="btn btn-secondary" onClick={() => setIsBannedAttackerFun(getRandomAttacker)}>IsBanned</button>
+                    </div>
+                    <div>
+                        <span>
+                            Banned Attackers: {attackerBanList.length > 0 ? attackerBanList.join(", ") : "None"}
+                        </span>
                     </div>
                 </div>
                 <div>
-                    <div className="d-flex flex-column align-items-center border border-black m-2 p-2">
-                        <span>{getRandomAttacker.name}</span>
-                        <img src={getRandomAttacker.image} />
+                    <div className="d-flex">
+                        <div class="h2">Defenders</div>
+                        <div className="ps-3">
+                            <button className="btn btn-warning" onClick={getRandomDefenderFun}>Get Random Defenders</button>
+                        </div>
                     </div>
-                </div>
-                <div className="d-flex">
-                    <div class="h2">Defenders</div>
-                    <div className="ps-3">
-                        <button className="btn btn-warning" onClick={getRandomDefenderFun}>Get Random Defenders</button>
+                    <div>
+                        <div className="d-flex flex-column align-items-center border border-black m-2 p-2">
+                            <span>{getRandomDefender.name}</span>
+                            <img src={getRandomDefender.image} />
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <div className="d-flex flex-column align-items-center border border-black m-2 p-2">
-                        <span>{getRandomDefender.name}</span>
-                        <img src={getRandomDefender.image} />
+                    <div>
+                        <button className="btn btn-secondary" onClick={() => setIsBannedDefenderFun(getRandomDefender)}>IsBanned</button>
+                    </div>
+                    <div>
+                        <span>
+                            Banned Defender: {defenderBanList.length > 0 ? defenderBanList.join(", ") : "None"}
+                        </span>
                     </div>
                 </div>
             </div>

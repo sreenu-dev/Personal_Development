@@ -27,8 +27,40 @@ export default function OperatorSelection() {
         { name: "Kali", image: "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/41NACeIbkdnIWgnwq0HzD4/9713f8e58b9a8c253b7507b59169bb3c/r6-operators-list-kali_358317.png" },
         { name: "Iana", image: "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/6vES8lEllMwW9OaBYRT7YX/39b5fe90684d7ce637a7d025cdd1ec96/r6s-operator-list-iana.png" }
     ]
+
+    let defenderNames = [
+        "Smoke", "Mute", "Castle", "Pulse", "Doc", "Rook", "Kapakan", "Tachanka", "Jäger", "Bandit", "Frost", "Valkyrie", "Caveira", "Echo", "Mira", "Lesion", "Ela", "Alibi", "Maestro", "Kaid", "Wamai", "Melusi", "Aruni", "Solis"
+    ]
+    let defenders = [
+        { name: "Smoke", image: "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/2Tm9rzdq6j9cpdW9qjnnrw/10d42d14755002e1056d1a940841482c/r6-operators-list-smoke.png" },
+        { name: "Mute", image: "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/4BWoDVmdDsgrI071YJwqyF/4bcf11da1e22bda96d130a0f0d4d5b48/r6-operators-list-mute.png" },
+        { name: "Castle", image: "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/1ETv9XcrmgbAdYWDJ2ZIh0/3f5ad7d030ee411c041c524880176603/r6-operators-list-castle.png" },
+        { name: "Pulse", image: "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/1YQb5phSD3uYbWrqhCBJRU/06e5f689777224bf8ca6c7c5cad9db9d/r6-operators-list-pulse.png" },
+        { name: "Doc", image: "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/2sCxLIpS9I19PKRz44Phj9/4f96411a556cc41597b8b3e83260cd21/r6-operators-list-doc.png" },
+        { name: "Rook", image: "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/1aFTx0BJYAKAnS1vyNA7w6/b4fc6421d382c677aa0197f84131eaa5/r6-operators-list-rook.png" },
+        { name: "Kapkan", image: "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/7MofnDHeL1uwsenBVjxplQ/1e5af8fe9cf6f36516c7f6e5d56fcac0/r6-operators-list-kapkan.png" },
+        { name: "Tachanka", image: "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/5P9kGyOrnsu7lRyr9xC71t/53981da03fa36adf99adf61bc098bd4a/r6s-operators-list-tachanka.png" },
+        { name: "Jäger", image: "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/4kMW2lcoewGifRWbvQVjKy/8f974b5d26db81dc823ea602e31d6273/r6-operators-list-jager.png" },
+        { name: "Bandit", image: "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/2cFHG0Xk93uoGrm5nTjDPE/2211339df9b36c1b0d9873e480d03fad/r6-operators-list-bandit.png" },
+        { name: "Frost", image: "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/33qvDwvWy7y9VGw9k1RYWi/73c4b6e46575b2b649058e2e626c223a/r6-operators-list-frost.png" },
+        { name: "Valkyrie", image: "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/7xN3HJXPLVEmWA9PDnQzTV/613b19a897503161f2cf6fe7bbe3408e/r6-operators-list-valkyrie.png" },
+        { name: "Caveira", image: "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/4RZ2Vwk7HozKMCtS5gFMp7/e1b930e3c80590a316939d9df0d88660/r6-operators-list-caveira.png" },
+        { name: "Echo", image: "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/7MdVMpafww11MfSVMEzyTK/4d4c5d92585c7cf11a28cbf9456e3d9e/r6-operators-list-echo.png" },
+        { name: "Mira", image: "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/2Q9Y4UXzkQfECOw5fX3QrI/bfd6532c840cb06a22e0196f2acfc462/r6-operators-list-mira.png" },
+        { name: "Lesion", image: "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/3woPDn0yMuXfkr2RYoymFj/964dfe9277e5299b0125c33b39e165d1/r6-operators-list-lesion.png" },
+        { name: "Ela", image: "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/6110n4X8KghHzBtPrksrKD/28e78ce725b3d1cd35c6f0967c0524b8/r6-operators-list-ela.png" },
+        { name: "Alibi", image: "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/11nzEgSwdAXLow3kPl0wom/3fdf2b0aa1c1af7ef785d28cf5d80114/r6-operators-list-alibi.png" },
+        { name: "Maestro", image: "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/6QNXf9qRkqzOdsprj2SWgI/0c4cc3b9423cada4fed0ba5ae2c9c722/r6-operators-list-maestro.png" },
+        { name: "Kaid", image: "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/9ATWPlasUTzxyJMNlV9SM/16dd669d06990b12088660ffc77bd6b3/r6-operators-list-kaid.png" },
+        { name: "Wamai", image: "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/2ZSUcKWczIo1w2WwzNan5B/98938e59a958117b46901c57fce98ae7/r6-operators-list-wamai_358318.png" },
+        { name: "Melusi", image: "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/1yoVAGw5rEQ8zPPHoQSDJb/b16a570fadb3342416c5c44847cc651a/r6s-operator-list-melusi.png" },
+        { name: "Aruni", image: "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/7LbjnSD3wKQXWhoxSXv3vu/238defac906026c3763e93041e3d96f9/r6s-operators-list-thorn.png" },
+        { name: "Solis", image: "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/2OV2K9FVqJdSNAogr0Wpod/62f2016a6c660714eb9a3c4a1f8196d4/r6s-operators-list-solis.png" }
+    ]
     let randomAttacker = attackers[Math.floor(Math.random() * attackers.length)];
-    let [getRandomAttacker,setRandomAttacker]= useState(randomAttacker);
+    let randomDefender = defenders[Math.floor(Math.random() * defenders.length)];
+    let [getRandomAttacker, setRandomAttacker] = useState(randomAttacker);
+    let [getRandomDefender, setRandomDefender] = useState(randomDefender);
 
 
     function getRandomAttackerFun() {
@@ -37,19 +69,39 @@ export default function OperatorSelection() {
         console.log(randomAttacker);
     }
 
+    function getRandomDefenderFun() {
+        randomDefender = defenders[Math.floor(Math.random() * defenders.length)];
+        setRandomDefender(randomDefender);
+        console.log(randomDefender);
+    }
+
     return (
         <div>
             Hai Operator Selection Page comes here
             <div className="d-flex">
-                <div class="h2">Attackers</div>
-                <div className="ps-3">
-                    <button className="btn btn-primary" onClick={getRandomAttackerFun}>Get Random Attacker</button>
+                <div className="d-flex">
+                    <div class="h2">Attackers</div>
+                    <div className="ps-3">
+                        <button className="btn btn-primary" onClick={getRandomAttackerFun}>Get Random Attacker</button>
+                    </div>
                 </div>
-            </div>
-            <div>
-                <div className="d-flex flex-column align-items-center border border-black m-2 p-2">
-                    <span>{randomAttacker.name}</span>
-                    <img src={randomAttacker.image} />
+                <div>
+                    <div className="d-flex flex-column align-items-center border border-black m-2 p-2">
+                        <span>{getRandomAttacker.name}</span>
+                        <img src={getRandomAttacker.image} />
+                    </div>
+                </div>
+                <div className="d-flex">
+                    <div class="h2">Defenders</div>
+                    <div className="ps-3">
+                        <button className="btn btn-warning" onClick={getRandomDefenderFun}>Get Random Defenders</button>
+                    </div>
+                </div>
+                <div>
+                    <div className="d-flex flex-column align-items-center border border-black m-2 p-2">
+                        <span>{getRandomDefender.name}</span>
+                        <img src={getRandomDefender.image} />
+                    </div>
                 </div>
             </div>
             {/* <div className="d-flex flex-wrap">
